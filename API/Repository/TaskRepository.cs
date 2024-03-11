@@ -101,10 +101,10 @@ namespace API.Repository
                 query = query.Where(t => t.AccountAssignedId == accountId);
             }
 
-            if (taskParam.Status != -1)
-            {
-                query = query.Where(t => t.Status == taskParam.Status);
-            }
+            //if (taskParam.Status != -1)
+            //{
+            //    query = query.Where(t => t.Status == taskParam.Status);
+            //}
 
             if (!string.IsNullOrEmpty(taskParam.AccountAssignedName))
             {

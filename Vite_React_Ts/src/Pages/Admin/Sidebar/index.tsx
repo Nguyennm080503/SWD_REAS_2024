@@ -8,6 +8,7 @@ import {
   MenuFoldOutlined,
   GlobalOutlined,
   BookOutlined,
+  SnippetsOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Button, Col, Layout, Menu, Row, theme } from "antd";
@@ -56,12 +57,13 @@ const items: MenuItem[] = [
     getItem("Term", "12"),
     getItem("Add Term", "13"),
   ]),
-  getItem("Logout", "14"),
+  getItem("Task", "14", <SnippetsOutlined />),
+  getItem("Logout", "15"),
 ];
 
 const Sidebar: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const { user, logout } = useContext(UserContext);
+  const { logout } = useContext(UserContext);
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -110,9 +112,12 @@ const Sidebar: React.FC = () => {
         navigate("/admin/term/create");
         break;
       case "14":
-        logout();
-        navigate("/");
+        navigate("/admin/task");
         break;
+      case "15":
+          logout();
+          navigate("/");
+          break;
       default:
         break;
     }

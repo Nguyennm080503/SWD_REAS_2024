@@ -19,7 +19,7 @@ import AdminRule from "../src/Pages/Admin/AdminRule"
 import AddRule from "../src/Pages/Admin/AdminAddRule"
 import AdminCreateNews from "../src/Pages/Admin/AdminCreateNews"
 import AuctionComplete from "../src/Pages/Admin/AdminAuctionComplete";
-import AuctionDetail from "./Pages/Admin/AdminAuctionDetail";
+// import AuctionDetail from "./Pages/Admin/AdminAuctionDetail";
 import HomePage from "./Pages/Member/HomePage/homePage";
 import RealEstatePage from "./Pages/Member/RealEstatePage/realEstatePage";
 import HelpPage from "./Pages/Member/HelpPage/helpPage";
@@ -29,6 +29,7 @@ import NewsPage from "./Pages/Member/NewsPage/newsPage";
 import { useContext } from "react";
 import { UserContext } from "./context/userContext";
 import RequiredAuth from "./components/RequiredAuth/requiredAuth";
+import TaskPage from "./Pages/Admin/AdminTask";
 
 const roles = {
   Admin: 1,
@@ -69,6 +70,7 @@ function App() {
               <Route path="real-estate/all" element={<AllList/>}/>
               <Route path="news" element={<NewsList/>}/>
               <Route path="news/create" element={<AdminCreateNews/>}/>
+              <Route path="task" element={<TaskPage/>}/>
               <Route path="term" element={<AdminRule/>}/>
               <Route path="term/create" element={<AddRule/>}/>
               <Route path="*" element={<PageNotFound />} />
